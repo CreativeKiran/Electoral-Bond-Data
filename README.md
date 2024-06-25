@@ -1,21 +1,21 @@
-# 📊 Electoral Bond Data Analysis
+## 📊 Electoral Bond Data Analysis
 This project creates a database from electoral bond data and explores SQL queries for EDA to enhance political funding transparency in India.
 
-# 📁 Project Description
+## 📁 Project Description
 In this repository, we are creating a database on electoral bond data and writing SQL queries to perform Exploratory Data Analysis (EDA).
 
-# 🎯 What Are We Accomplishing?
+## 🎯 What Are We Accomplishing?
 We are transforming raw data into a database and exploring SQL queries to analyze this data.
 
-# 📄 Electoral Bond Data
-## Description
+## 📄 Electoral Bond Data
+### Description:
 In a significant development affecting political transparency in India, the Supreme Court struck down the Electoral Bond scheme, emphasizing that anonymity in political funding undermines voters' right to information. This decision mandates transparency in political party funding, aligning with democratic values.
 
 Following the ruling, the Election Commission of India (ECI) released comprehensive data on March 21, 2024, through the State Bank of India (SBI). This dataset includes information on donors and recipients from April 12, 2019, to January 11, 2024, with bond numbers for matching purchasers and recipients. Additional data from the Enforcement Directorate supplements this dataset.
 
 The ECI published two separate lists of donors and recipients on its website in accordance with a Supreme Court order.
 
-# 🔗 Data Sources
+## 🔗 Data Sources
 These are the official Sites where the data is released by the government.
 
 https://www.eci.gov.in/disclosure-of-electoral-bonds
@@ -34,47 +34,50 @@ The Bank codes details have been extracted from this website:
 
 All the bank banches don't have the authority to issue electoral bonds only few branches of SBI bank can issue them and this table contains the details of that banks and based on the branch code we can connect to the receiver and donor data.
 
-pib.gov
+- [pib.gov](https://pib.gov.in/Pressreleaseshare.aspx?PRID=1566604)
 
 
-## Kaggle Source:
+### Kaggle Source:
 
-Kaggle Dataset
-# 🗂 Data Dictionary
+https://www.kaggle.com/datasets/uplytics/electoral-bonds-india-complete-2024-dataset/data 
+## 🗂 Data Dictionary
 Our data consists of three tables:
 
 ### 1. Donor Data
-No	Column Name	Description
-1	SNo	Serial number. A sequential number assigned to each record.
-2	Urn	Unique reference number.
-3	JournalDate	Date of journal entry.
-4	PurchaseDate	Date of bond purchase.
-5	ExpiryDate	Expiry date of the bond.
-6	Purchaser	Name of the purchaser.
-7	Prefix	Prefix code associated with the bond.
-8	BondNumber	A number followed by the prefix code.
-9	Denominations	Value of the bond. Possible values: [1K, 10K, 1L, 10L, 1Cr].
-10	PayBranchCode	Payment branch code (IFSC Code) where the bond is issued.
-11	PayTeller	Teller ID who issued the bond.
+No|Column Name	|Description
+---|------------|-------------
+1|	SNo	|Serial number. A sequential number assigned to each record.
+2|	Urn	|Unique reference number.
+3|	JournalDate|	Date of journal entry.
+4|	PurchaseDate|	Date of bond purchase.
+5|	ExpiryDate|	Expiry date of the bond.
+6|	Purchaser|	Name of the purchaser.
+7|	Prefix|	Prefix code associated with the bond.
+8|	BondNumber|	A number followed by the prefix code.
+9|	Denominations	|Value of the bond. Possible values: [1K, 10K, 1L, 10L, 1Cr].
+10|	PayBranchCode|	Payment branch code (IFSC Code) where the bond is issued.
+11|	PayTeller|	Teller ID who issued the bond.
 ### 2. Recipient Data
-No	Column Name	Description
-1	SNo	Serial number. A sequential number assigned to each record.
-2	DateEncashment	Date of bond encashment.
-3	PartyName	Name of the political party (recipient).
-4	AccountNum	Account number of the party. Only the last four digits are visible for privacy.
-5	Prefix	Prefix code associated with the bond.
-6	BondNumber	A number followed by the prefix code.
-7	Denominations	Value of the bond. Possible values: [1K, 10K, 1L, 10L, 1Cr].
-8	PayBranchCode	Payment branch code (IFSC Code) where the bond is encashed.
-9	PayTeller	Teller ID who encashed the bond.
+| No  | Column Name    | Description                                                                        |
+|-----|----------------|------------------------------------------------------------------------------------|
+| 1   | SNo            | Serial number. A sequential number assigned to each record.                         |
+| 2   | DateEncashment | Date of bond encashment.                                                           |
+| 3   | PartyName      | Name of the political party (recipient).                                           |
+| 4   | AccountNum     | Account number of the party. Only the last four digits are visible for privacy.     |
+| 5   | Prefix         | Prefix code associated with the bond.                                              |
+| 6   | BondNumber     | A number followed by the prefix code.                                              |
+| 7   | Denominations  | Value of the bond. Possible values: [1K, 10K, 1L, 10L, 1Cr].                       |
+| 8   | PayBranchCode  | Payment branch code (IFSC Code) where the bond is encashed.                        |
+| 9   | PayTeller      | Teller ID who encashed the bond.
 ### 3. Bank Branch Data
-No	Column Name	Description
-1	Sl.No.	Serial number. A sequential number assigned to each record.
-2	State/UT	State/UT where the bank is located.
-3	Name of the Branch & Address	Complete address of the bank.
-4	City	City where the bank branch is located.
-5	Branch Code No	IFSC Code. A unique code assigned to each branch.
-# 🌐 Domain Knowledge
+| No  | Column Name            | Description                                                                       |
+|-----|------------------------|-----------------------------------------------------------------------------------|
+| 1   | Sl.No.                 | Serial number. A sequential number assigned to each record.                       |
+| 2   | State/UT               | State/UT where the bank is located.                                               |
+| 3   | Name of the Branch & Address | Complete address of the bank.                                           |
+| 4   | City                   | City where the bank branch is located.                                            |
+| 5   | Branch Code No         | IFSC Code. A unique code assigned to each branch.
+## 🌐 Domain Knowledge
 Each bond is characterized by a prefix and a bond number. Together, they form a unique identification ID. By matching these codes across tables, we can identify the source of monetary donations to specific political parties.
 
 In the donor and recipient tables, we have branch codes indicating the bond issuing and encashing branches. By joining these tables with bank branch data, we can track money flow from city to city.
@@ -85,9 +88,10 @@ The data released by the government is incomplete, as the record counts in the d
 
 Certain companies have acquired bonds under slightly varied names. We address these discrepancies in the data cleaning section of the code.
 
-# 📂 File Structure
+## 📂 File Structure
 graphql
 Copy code
+```bash
 EDA SQL electoral bonddata
 │
 ├───Data Cleaning
@@ -116,10 +120,15 @@ Final_database_data.ipynb
 Queries.pdf
 queries.sql
 README.md
-Data Cleaning Folder: Contains files related to data cleaning.
-RawData Folder: Contains raw data files.
-FinalData Folder: Contains final data files used to create the database, which are the output from Final_database_data.ipynb.
-Schema Folder: Contains files explaining the schema we designed.
-queries.sql: SQL file with queries written on the database.
-Queries.pdf: PDF version of queries.sql for easy reference.
-electoralbonddata_database.sql: Self-contained database file.
+```
+The above shows the folder structure of the project 
+
+- Data Cleaning Folder has the files related to data cleaning. 
+- RawData Folder has the data files
+- Final data Folder has the final files which we are using to create the database which is the output files we got from Final_database_data.ipynb
+- Schema folder has the files trying to explain the schema we designed. 
+- queries.sql is the sql file where some queries are written on the database. 
+- Queries.pdf is the same queries.sql file but in pdf format for easy reference. 
+- electoralbonddata_database.sql is the self contained database file.  
+
+---
