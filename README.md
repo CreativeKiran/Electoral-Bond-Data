@@ -16,17 +16,26 @@ Following the ruling, the Election Commission of India (ECI) released comprehens
 The ECI published two separate lists of donors and recipients on its website in accordance with a Supreme Court order.
 
 # 🔗 Data Sources
-These are the official sites where the data is released by the government:
+These are the official Sites where the data is released by the government.
 
-Election Commission of India
-Enforcement Directorate (Data available only since 2021)
-Comptroller and Auditor General of India (Data extracted from 2018)
-Income Tax Department (Data extracted from 2010)
-Central Bureau of Investigation (Data extracted from 2018)
-Ministry of Corporate Affairs
-The bank codes details have been extracted from various official sources. Only a few SBI branches are authorized to issue electoral bonds, and this table contains the details of those branches.
+https://www.eci.gov.in/disclosure-of-electoral-bonds
 
-Note: We obtained the dataset from Kaggle, available in comma-separated format (CSV). This data, unlike the official PDFs, is in a more accessible format for analysis and processing.
+https://enforcementdirectorate.gov.in/press-release ( Data available only since 2021 )
+
+https://cag.gov.in/en/audit-report ( Data extracted from 2018 )
+
+https://incometaxindia.gov.in/Pages/press-releases.aspx ( Data extracted from 2010 )
+
+https://cbi.gov.in/press-releases ( Data extracted from 2018 )
+
+https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html  
+
+The Bank codes details have been extracted from this website:
+
+All the bank banches don't have the authority to issue electoral bonds only few branches of SBI bank can issue them and this table contains the details of that banks and based on the branch code we can connect to the receiver and donor data.
+
+pib.gov
+
 
 ## Kaggle Source:
 
